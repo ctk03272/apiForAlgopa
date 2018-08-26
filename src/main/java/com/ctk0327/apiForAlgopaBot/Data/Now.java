@@ -11,13 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Problems {
+public class Now {
+	
 	@Id
-	String problemId;
-	String problemName;
-	String link;
+	Integer id;
 	String week;
-	String weekname;
-	String mendatory;
-
+	String problem;
 }
