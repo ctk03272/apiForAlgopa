@@ -17,5 +17,6 @@ public class Problems {
 	String problemName;
 	String link;
 	String week;
+	String weekname;
 
 }
