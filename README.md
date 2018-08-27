@@ -1,5 +1,3 @@
-# apiForAlgopa
-
 # AlgopaBot을 위한 API 크롤링 봇입니다.
 
 ## AlgopaBotT을 위한 API
