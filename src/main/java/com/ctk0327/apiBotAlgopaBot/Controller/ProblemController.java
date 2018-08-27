@@ -31,7 +31,9 @@ public class ProblemController {
 	public List<Problems> findAllBoards() {
 		Optional<Now> now=nowRepository.findById(Integer.valueOf(1));
 		String week=now.get().getWeek();
-		String problem=now.get().getProblem();
+		String problemNumber=now.get().getProblem();
+		Optional<Problems> nowProblem=problemRepository.findById(problemNumber);
+		String problem=nowProblem.get().getProblemName();
 		ArrayList<Problems> ar = new ArrayList<>();
 		problemRepository.findAll().forEach((a)->{
 			if(a.getWeek().equals(week)) {
