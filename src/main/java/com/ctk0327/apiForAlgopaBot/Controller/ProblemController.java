@@ -35,6 +35,17 @@ public class ProblemController {
 	@Autowired
 	SolvingRepository solvingRepository;
 
+	@RequestMapping(value = "/members", method = RequestMethod.GET)
+	@ResponseBody
+	public ArrayList<String> addThisWeek() {
+		ArrayList<String> ar = new ArrayList<>();
+		Member[] users = Constants.Member.values();
+		for(Member member:users) {
+			ar.add(member.name());
+		}
+		return ar;
+	}
+
 	@RequestMapping(value = "/problemses/thisweek", method = RequestMethod.GET)
 	@ResponseBody
 	public List<Problems> findAllBoards() {
