@@ -40,7 +40,7 @@ public class ProblemController {
 	public ArrayList<String> addThisWeek() {
 		ArrayList<String> ar = new ArrayList<>();
 		Member[] users = Constants.Member.values();
-		for(Member member:users) {
+		for (Member member : users) {
 			ar.add(member.name());
 		}
 		return ar;
@@ -94,9 +94,11 @@ public class ProblemController {
 		for (Member member : users) {
 			ArrayList<String> solvings = new ArrayList<>();
 			solvingRepository.findAll().forEach((a) -> {
-				if (a.getUserId().equals(member.name()) && problemNumbers.contains(a.getProblemId())
-						&& !solvings.contains(a.getProblemId())) {
-					solvings.add(a.getProblemId());
+				if (a.getSolvingId().getUserId().equals(member.name())
+						&& problemNumbers.contains(a.getSolvingId().getProblemId())
+						&& !solvings.contains(a.getSolvingId().getProblemId())) {
+					solvings.add(a.getSolvingId().getProblemId());
+					System.out.println(a);
 				}
 				solving.put(member, solvings);
 			});
